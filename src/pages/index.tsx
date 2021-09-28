@@ -18,9 +18,7 @@ export default function SignIn() {
   const { 
     register, 
     handleSubmit, 
-    formState: { errors } } = useForm<SignInFormData>({
-      resolver: yupResolver(signInFormShema)
-  });
+    formState: { errors } } = useForm<SignInFormData>({});
 
   const handleSignIn = (values: SignInFormData) => {
     console.log(values);
