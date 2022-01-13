@@ -97,7 +97,7 @@ export default function UserList() {
                   </Tr>
                 </Thead>
                 <Tbody>
-                  {data.users.map(({ id, name, email, createdAt }) => (
+                  {data.users.map(({ id, name, email, created_at }) => (
                     <Tr key={id}>
                       <Td px={["4", "4", "6"]}>
                         <Checkbox colorScheme="pink" />
@@ -112,7 +112,7 @@ export default function UserList() {
                           </Text>
                         </Box>
                       </Td>
-                      {isWideVersion && <Td>{createdAt}</Td>}
+                      {isWideVersion && <Td>{created_at}</Td>}
                       <Td>
                         <Button
                           as="a"

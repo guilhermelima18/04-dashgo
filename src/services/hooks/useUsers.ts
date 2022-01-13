@@ -5,7 +5,7 @@ type User = {
   id: string;
   name: string;
   email: string;
-  createdAt: string;
+  created_at: string;
 };
 
 type GetUsersResponse = {
@@ -22,14 +22,14 @@ export async function getUsers(page: number): Promise<GetUsersResponse> {
 
   const totalCount = Number(headers["x-total-count"]);
 
-  const users = data.users.map(({ id, name, email, createdAt }) => {
+  const users = data.users.map(({ id, name, email, created_at }) => {
     return {
       id,
       name,
       email,
-      createdAt: new Date(createdAt).toLocaleDateString("pt-BR", {
+      created_at: new Date(created_at).toLocaleDateString("pt-BR", {
         day: "2-digit",
-        month: "long",
+        month: "short",
         year: "numeric",
       }),
     };
